@@ -28,9 +28,9 @@ def passing_pitch(df, half):
 
     return fig
     
-def shooting_pitch(df,half):
+def shooting_pitch(df,half): 
 
-    fig, ax = plt.subplots(figsize=(27,15))
+    fig, ax = plt.subplots(figsize=(18,12))
     pitch = Pitch(pitch_type='statsbomb', pitch_color='black', goal_type='box')
 
     for x in range(len(df['id'])):
