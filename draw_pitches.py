@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt
 from mplsoccer.pitch import Pitch
+import numpy as np
 
 def passing_pitch(df, half):
     
@@ -27,3 +28,18 @@ def passing_pitch(df, half):
 
     return fig
     
+def shooting_pitch(df,half):
+
+    fig, ax = plt.subplots(figsize=(27,15))
+    pitch = Pitch(pitch_type='statsbomb', pitch_color='black', goal_type='box')
+
+    for x in range(len(df['id'])):
+        if df['period'].iloc[x] == half:
+            size = np.sqrt(df['shot.statsbomb_xg'].iloc[x])*250 #bigger circle means more xg
+            if df['shot.outcome.name'].iloc[x] == 'Goal':       
+                plt.scatter(df['location'].iloc[x][0],df['location'].iloc[x][1], color='blue', s=size)
+            else:
+                plt.scatter(df['location'].iloc[x][0],df['location'].iloc[x][1],color='red', s=size)
+
+    pitch.draw(ax=ax)
+    return fig
