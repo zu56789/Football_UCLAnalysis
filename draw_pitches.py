@@ -3,7 +3,7 @@ from mplsoccer.pitch import Pitch
 
 def passing_pitch(df, half):
     
-    fig, ax = plt.subplots(figsize=(28,18))
+    fig, ax = plt.subplots(figsize=(27,15))
     pitch = Pitch(pitch_type='statsbomb', pitch_color='black', goal_type='box')
 
     for x in range(len(df['id'])):
