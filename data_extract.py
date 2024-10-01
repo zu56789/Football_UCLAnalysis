@@ -9,3 +9,6 @@ def get_data(source): #method to get data from a url
     pd.set_option("display.max.columns", None)
     return df
 
+events_df = get_data("https://raw.githubusercontent.com/statsbomb/open-data/refs/heads/master/data/events/18237.json")
+
+print(events_df.head())
