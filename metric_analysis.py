@@ -19,9 +19,16 @@ def get_passing_accuracy(df, half):
     return round((good_passes / (good_passes + bad_passes)) * 100) # successful pass percentage
 
 
-def get_xg(df):
+def get_xg(df,half=0):
     xg = 0.0
     for x in range(len(df['id'])):
-         if df['period'].iloc[x] != 5: # Not including xg from the penalty shootout    
-            xg += df['shot.statsbomb_xg'].iloc[x]
+         
+        if half == 0:
+            if df['period'].iloc[x] != 5:
+                xg += df['shot.statsbomb_xg'].iloc[x]
+
+        else:
+            if df['period'].iloc[x] == half and half != 5: # not including penalty shootout
+                xg += df['shot.statsbomb_xg'].iloc[x]
+
     return round(xg,2)
