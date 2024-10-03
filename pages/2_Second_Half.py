@@ -1,7 +1,7 @@
 import streamlit as st
 from data_extract import chels_passes_df, bayern_passes_df, chels_shots_df, bayern_shots_df
 from draw_pitches import passing_pitch, shooting_pitch
-from metric_analysis import get_passing_accuracy, get_xg
+from metric_analysis import get_passing_accuracy, get_xg, get_shot_accuracy
 
 st.set_page_config(page_title="Second Half")
 
@@ -20,6 +20,10 @@ with chels_tab:
     st.pyplot(shooting_pitch(chels_shots_df,2))
     expander = st.expander("Shooting stats")
     expander.write("Expected Goals: " + str(get_xg(chels_shots_df, 2)))
+    expander.write("Shot accuracy: " + str(get_shot_accuracy(chels_shots_df, 2)[0]) + "%")
+    expander.write("Shot attempts: " + str(get_shot_accuracy(chels_shots_df, 2)[1]))
+    expander.write("Shots on target: " + str(get_shot_accuracy(chels_shots_df, 2)[2]))
+    expander.write("Shots off target: " + str(get_shot_accuracy(chels_shots_df, 2)[3]))
 
 with bayern_tab:
     st.write("Passing map")
@@ -32,3 +36,7 @@ with bayern_tab:
     st.pyplot(shooting_pitch(bayern_shots_df,2))
     expander = st.expander("Shooting stats")
     expander.write("Expected Goals: " + str(get_xg(bayern_shots_df, 2)))
+    expander.write("Shot accuracy: " + str(get_shot_accuracy(bayern_shots_df, 2)[0]) + "%")
+    expander.write("Shot attempts: " + str(get_shot_accuracy(bayern_shots_df, 2)[1]))
+    expander.write("Shots on target: " + str(get_shot_accuracy(bayern_shots_df, 2)[2]))
+    expander.write("Shots off target: " + str(get_shot_accuracy(bayern_shots_df, 2)[3]))

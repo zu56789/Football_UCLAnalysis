@@ -70,4 +70,8 @@ def get_shot_accuracy(df,half=0):
                     on_target += 1
                 else:
                     off_target += 1
+                    
+    if num_shots == 0:
+        return(0,num_shots, on_target, off_target)
+
     return round((on_target / num_shots) * 100), num_shots, on_target, off_target
