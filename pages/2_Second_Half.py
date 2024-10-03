@@ -13,12 +13,21 @@ with chels_tab:
     st.write("Passing map")
     st.pyplot(passing_pitch(chels_passes_df,2))
     expander = st.expander("Passing stats")
+    expander.markdown("""
+    - 🔵 **Blue**: Accurate pass
+    - 🔴 **Red**: Inaccurate pass
+    """)
     expander.write("Passing accuracy: " + str(get_passing_accuracy(chels_passes_df, 2)[0]) + "%")
     expander.write("Passes attempted: " + str(get_passing_accuracy(chels_passes_df, 2)[1]))
     expander.write("Passes completed: " + str(get_passing_accuracy(chels_passes_df, 2)[2]))
     st.write("Shooting map")
     st.pyplot(shooting_pitch(chels_shots_df,2))
     expander = st.expander("Shooting stats")
+    expander.markdown("""
+    - 🔵 **Blue**: Goal
+    - 🔴 **Red**: No Goal
+    - **Bigger circle**: Higher xg shot
+    """)
     expander.write("Expected Goals: " + str(get_xg(chels_shots_df, 2)))
     expander.write("Shot accuracy: " + str(get_shot_accuracy(chels_shots_df, 2)[0]) + "%")
     expander.write("Shot attempts: " + str(get_shot_accuracy(chels_shots_df, 2)[1]))
@@ -29,12 +38,21 @@ with bayern_tab:
     st.write("Passing map")
     st.pyplot(passing_pitch(bayern_passes_df,2))
     expander = st.expander("Passing stats")
+    expander.markdown("""
+    - 🔵 **Blue**: Accurate pass
+    - 🔴 **Red**: Inaccurate pass
+    """)
     expander.write("Passing accuracy: " + str(get_passing_accuracy(bayern_passes_df, 2)[0]) + "%")
     expander.write("Passes attempted: " + str(get_passing_accuracy(bayern_passes_df, 2)[1]))
     expander.write("Passes completed: " + str(get_passing_accuracy(bayern_passes_df, 2)[2]))
     st.write("Shooting map")
     st.pyplot(shooting_pitch(bayern_shots_df,2))
     expander = st.expander("Shooting stats")
+    expander.markdown("""
+    - 🔵 **Blue**: Goal
+    - 🔴 **Red**: No Goal
+    - **Bigger circle**: Higher xg shot
+    """)
     expander.write("Expected Goals: " + str(get_xg(bayern_shots_df, 2)))
     expander.write("Shot accuracy: " + str(get_shot_accuracy(bayern_shots_df, 2)[0]) + "%")
     expander.write("Shot attempts: " + str(get_shot_accuracy(bayern_shots_df, 2)[1]))
