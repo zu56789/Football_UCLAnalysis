@@ -23,4 +23,6 @@ I am a huge fan of Chelsea football club and the 2012 Champions League final sti
 ## Data Sources
 
 All data used is derived from StatsBomb and their open-data repository on github at: https://github.com/statsbomb/open-data
+
 ![alt text](https://github.com/zu56789/Football_UCLAnalysis/blob/main/statsbomb.jpg "StatsBomb logo")
+
