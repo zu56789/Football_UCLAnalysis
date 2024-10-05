@@ -16,6 +16,10 @@ The aim of this analysis is to:
 - Compare the performance of each team across the game
 - Provide visualizations of passing and shooting data
 
+## Streamlit app link
+
+Use the following link to view my streamlit application: https://ucl2012analysis.streamlit.app/
+
 ## What inspired this project?
 
 I am a huge fan of Chelsea football club and the 2012 Champions League final still remains my greatest ever memory of supporting my club. I paired this sentiment with my interest in football statistics to create a project that peaks my interest from both a technology and football perspective.
