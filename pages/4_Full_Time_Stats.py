@@ -56,3 +56,19 @@ def draw_bar_charts(chels_stats, bayern_stats, labels, title):
         ax.text(bar.get_width(), bar.get_y() + bar.get_height()/2, str(bar.get_width()), va='center')
 
     return fig
+
+st.title("Full time stats")
+
+passing_tab, shooting_tab = st.tabs(["Passing stats", "Shooting stats"])
+
+with passing_tab:
+    st.header("Passing stats")
+    passing_labels = list(chels_passing.keys())
+    passing_chart = draw_bar_charts(chels_passing,bayern_passing,passing_labels, "Passing Data Comparison")
+    st.pyplot(passing_chart)
+
+with shooting_tab:
+    st.header("Shooting stats")
+    shooting_labels = list(chels_shooting.keys())
+    shooting_chart = draw_bar_charts(chels_shooting,bayern_shooting,shooting_labels, "Shooting Data Comparison")
+    st.pyplot(shooting_chart)
